@@ -44,9 +44,21 @@ export const counterSlice = createSlice({
     removeAllTasks: (state) => {
         state.completed_tasks= []
     },
+    updateTask: (state, action) => {
+        
+        let index = state.active_tasks.findIndex(obj => obj.id === action.payload.id)
+        
+        state.active_tasks[index].task = action.payload.task
+
+        console.log('this is counter slice', action.payload.id)
+
+        state.active_tasks = [
+            ...state.active_tasks
+        ]    
+    }
   },
 })
 
-export const { addTask, removeAllTasks, removeTask, undoneTask, completeTask } = counterSlice.actions
+export const { addTask, removeAllTasks, removeTask, undoneTask, completeTask, updateTask } = counterSlice.actions
 
 export default counterSlice.reducer
