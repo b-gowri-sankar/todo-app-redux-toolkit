@@ -16,7 +16,7 @@ export const counterSlice = createSlice({
     ]
     },
     completeTask: (state, action) => {
-        console.log(action.payload)
+        // console.log(action.payload)
 
         state.completed_tasks = [
             action.payload,
@@ -26,32 +26,23 @@ export const counterSlice = createSlice({
             ...state.active_tasks.filter(task => task.id !== action.payload.id)
         ]
       },
-    undoneTask: (state, action) => {
-        state = {
-            ...state,
-            active_tasks: [
-                action.payload,
-                ...state.active_tasks
-            ],
-            completed_tasks: [
-                ...state.completed_tasks.filter(task => task.id !== action.payload.id)
-            ]
-        }
+      undoneTask: (state, action) => {        
+        state.active_tasks = [
+            action.payload,
+            ...state.active_tasks
+        ]
+        state.completed_tasks = [
+            ...state.completed_tasks.filter(task => task.id !== action.payload.id)
+        ]
       },
-    removeTask: (state, action) => {
-        state = 
-            {
-                ...state,
-                completed_tasks: [
-                    ...state.completed_tasks.filter(task => task.id !== action.payload)
-                ]
-            }
+      removeTask: (state, action) => {
+        
+        state.completed_tasks = [
+            ...state.completed_tasks.filter(task => task.id !== action.payload)
+        ]
       },
     removeAllTasks: (state) => {
-       state= {
-            ...state,
-            completed_tasks:[]
-        }
+        state.completed_tasks= []
     },
   },
 })

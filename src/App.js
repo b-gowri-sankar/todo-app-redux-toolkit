@@ -13,6 +13,12 @@ const Contaienr = styled.div`
     text-align: center;
     margin-bottom: 50px;
   }
+  @media only screen and (max-width: 600px){
+    max-width: 80%;
+  }
+  @media only screen and (max-width: 370px){
+    max-width: 90%;
+  }
 `;
 
 function App() {

@@ -9,9 +9,8 @@ const Form = styled.form`
   display: flex;
   margin-bottom: 30px;
   input{
-    flex-basis: 70%;
-    /* width: 100%; */
-    /* padding:0px 10px; */
+    flex-basis: 80%;
+    width: 100%;
     padding-left: 5px;
     font-size: 15px;
     letter-spacing: .02em;
@@ -22,7 +21,6 @@ const Form = styled.form`
     }
   }
   button{
-    /* width: 100%; */
     margin-left: 10px;
     padding: 10px;
     background-color: #464775;
@@ -30,7 +28,11 @@ const Form = styled.form`
     cursor: pointer;
     border: none;
     border-radius: 12px;
-    
+  }
+  @media only screen and (max-width: 600px){
+    input{
+      flex-basis: 60%;
+    }
   }
 `;
 

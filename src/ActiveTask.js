@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    background-color: beige;
+    margin-bottom: 5px;
+    padding: 10px;
     input[type=checkbox]{
        transform: scale(1.4);
     }
@@ -14,6 +17,10 @@ export const Container = styled.div`
     }
     .completed{
         text-decoration:line-through;
+    }
+    img{
+        float: right;
+        cursor: pointer;
     }
 `;
 
