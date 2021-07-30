@@ -44,7 +44,9 @@ export const Container = styled.div`
 `;
 
 const UPDATE = styled.div`
+    max-width: 80%;
     display: flex;
+    margin-left: 0px;
 `;
 
 const ActiveTask = ({active_tasks}) => {
